@@ -8,7 +8,7 @@ import datetime
 
 
 
-# engine = create_engine('sqlite:///contacts.db')
+# engine = create_engine('sqlite:///#.db')
 # Base.metadata.bind = engine
 
 # DBSession = sessionmaker(bind=engine)
@@ -29,7 +29,7 @@ app = Flask(__name__)
 mail = Mail(app)
 today = datetime.date
 
-app.secret_key = 'sdh_attempt_at_anonymity'
+#app.secret_key = '#'
 
 
 
