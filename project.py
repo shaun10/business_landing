@@ -22,10 +22,11 @@ def charge():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
-    amount = 500
+    amount = 22.00
 
     customer = stripe.Customer.create(
-        email='customer@example.com',
+        #email='customer@example.com',
+        email =request.form['email']
         card=request.form['stripeToken']
     )
 
@@ -39,6 +40,6 @@ def charge():
     return render_template('charge.html', amount=amount)
 
 if __name__ == '__main__':
-	app.run(debug=False)
+	app.run(debug=True)
 
 app.secret_key = 'MadNessSecretKeyed10!!!233!21OK'
