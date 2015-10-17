@@ -21,6 +21,8 @@ stripe.api_key = stripe_keys['secret_key']
 app = Flask(__name__)
 app.secret_key = 'MadNessSecretKeyed10!!!233!21OK'
 
+itemsAvail = {'shampoo':2000, 'conditioner':2200,'leaveInConditioner':2500}
+
 @app.route('/')
 def index():
     return render_template('index.html', key=stripe_keys['publishable_key'])
@@ -30,7 +32,8 @@ def charge():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
-    amount = 2200
+    #itemBought = request.form['product']
+    #amount = itemsAvail[itemBought]
 
     customer = stripe.Customer.create(
         email='customer@example.com',
@@ -48,6 +51,6 @@ def charge():
     return render_template('charge.html', amount=amount)
 
 if __name__ == '__main__':
-	#app.run(debug=False)
-	app.run(host='0.0.0.0', port=int(os.environ.get("PORT")))
+	app.run(debug=False)
+	#app.run(host='0.0.0.0', port=int(os.environ.get("PORT")))
 
