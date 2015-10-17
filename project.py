@@ -1,11 +1,18 @@
-import os
 from flask import Flask, render_template, request
 import stripe
 
+#web: PUBLISHABLE_KEY=pk_test_6pRNASCoBOKtIshFeQd4XMUh SECRET_KEY=MadNessSecretKeyed10!!!233!21OK python project.py
+PUBLISHABLE_KEY="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+SECRET_KEY="MadNessSecretKeyed10!!!233!21OK"
+app.secret_key = 'MadNessSecretKeyed10!!!233!21OK'
+# stripe_keys = {
+#     'secret_key': os.environ['SECRET_KEY'],
+#     'publishable_key': os.environ['PUBLISHABLE_KEY']
+# }
 
 stripe_keys = {
-    'secret_key': os.environ['SECRET_KEY'],
-    'publishable_key': os.environ['PUBLISHABLE_KEY']
+	'secret_key' = SECRET_KEY,
+	'publishable_key' = PUBLISHABLE_KEY
 }
 
 stripe.api_key = stripe_keys['secret_key']
@@ -40,6 +47,5 @@ def charge():
     return render_template('charge.html', amount=amount)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=False)
 
-app.secret_key = 'MadNessSecretKeyed10!!!233!21OK'
