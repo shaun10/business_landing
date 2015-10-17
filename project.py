@@ -51,6 +51,6 @@ def charge():
     return render_template('charge.html', amount=amount)
 
 if __name__ == '__main__':
-	app.run(debug=False)
-	#app.run(host='0.0.0.0', port=int(os.environ.get("PORT")))
+	#app.run(debug=False)
+	app.run(host='0.0.0.0', port=int(os.environ.get("PORT")))
 
