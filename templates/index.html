@@ -114,7 +114,7 @@
                 <h2>Shampoo</h2>
                 <p>Our shampoo was formulated with ingredients like Coconut oil and Aloe to gently cleanse your hair and scalp, while also nourishing and hydrating your hair. Lemon oil adds to the experience by creating a rich foamy lather and a tantalizing scent. Daily use will leave your hair feeling fresh and healthy!</p>
                 <p>
-                  <form action="/charge" method="post">
+                  <form action="/chargeSha" method="post" id='Shampoo'>
                 <article>
                   <label>
                     <span>Amount is $20.00</span>
@@ -124,9 +124,11 @@
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="{{ key }}"
                         data-description="Shampoo"
-                        data-amount="2200"
-                        data-zip-code=true
-                        data-locale="auto"></script>
+                        data-amount="2000"
+                        data-billing-address=true
+                        data-shipping-address=true
+                        data-locale="auto">
+                </script>
                 </form>
                 </p>
             </div>
@@ -135,7 +137,7 @@
                 <h2>Conditioner</h2>
                 <p>Our conditioner was designed to target each damaged hair at the root to encourage healthy growth. As you massage the conditioner into your hair it is enveloped in the perfect amount of product to help heal breakage and moisturize dry cracked hair. After just one use you will see the difference our natural products can make!</p>
                                 <p>
-                  <form action="/charge" method="post">
+                <form action="/chargeCon" method="POST" id='Conditioner'>
                 <article>
                   <label>
                     <span>Amount is $22.00</span>
@@ -144,9 +146,10 @@
 
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="{{ key }}"
-                        data-description="Shampoo"
+                        data-description="Conditioner"
                         data-amount="2200"
-                        data-zip-code=true
+                        data-billing-address=true
+                        data-shipping-address=true
                         data-locale="auto"></script>
                 </form>
                 </p>
@@ -156,7 +159,7 @@
                 <h2>Leave in Conditioner</h2>
                 <p>Leave in Conditioner is an important hair care product that many people neglect. Even the best shampoos and conditioners can't do it all, and that is where leave in products come in handy. Our leave in conditioner is packed full of hair healthy ingredients like Omega 3, Buriti nut oil,Jojoba oil Moroccan nut oil, Brazilian nut oil... These will give your hair lasting shine and protect it from things like sun damage,thermal heat,swimming pool,pollutants, and humidity! Don't wait until it's too late! Pick up our hair care trio and make your hair the healthiest on the block!!</p>
                                 <p>
-                  <form action="/charge" method="post">
+                  <form action="/chargeLeave" method="post" name='LeaveInConditioner'>
                 <article>
                   <label>
                     <span>Amount is $25.00</span>
@@ -165,9 +168,8 @@
 
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="{{ key }}"
-                        data-description="Shampoo"
-                        data-amount="2200"
-                        data-zip-code=true
+                        data-description="Leave In Conditioner"
+                        data-amount="2500"
                         data-locale="auto"></script>
                 </form>
                 </p>

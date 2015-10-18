@@ -27,17 +27,15 @@ itemsAvail = {'shampoo':2000, 'conditioner':2200,'leaveInConditioner':2500}
 def index():
     return render_template('index.html', key=stripe_keys['publishable_key'])
 
-@app.route('/charge', methods=['POST'])
+@app.route('/chargeSha', methods=['POST'])
 def charge():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
-    #itemBought = request.form['product']
-    #amount = itemsAvail[itemBought]
+    amount = 2000
 
     customer = stripe.Customer.create(
         email='customer@example.com',
-        #email =request.form['email'],
         card=request.form['stripeToken']
     )
 
@@ -45,12 +43,55 @@ def charge():
         customer=customer.id,
         amount=amount,
         currency='usd',
-        description='Shampoo'
+        description="Shampoo Purchase"
+        
     )
 
-    return render_template('charge.html', amount=amount)
+    return render_template('charge.html', amount=int(amount/100))
+
+@app.route('/chargeCon', methods=['POST'])
+def charge():
+    # Amount in cents
+    #Can use a get on the dropdown to choose the product to sell to the individual
+    #We just need to get the one used in the form then change the logic below to reflect the other product
+    amount = 2200
+    customer = stripe.Customer.create(
+        email='customer@example.com',
+        card=request.form['stripeToken']
+    )
+
+    charge = stripe.Charge.create(
+        customer=customer.id,
+        amount=amount,
+        currency='usd',
+        description="Conditioner Purchase"
+    )
+
+    return render_template('charge.html', amount=int(amount/100))
+
+@app.route('/chargeLeave', methods=['POST'])
+def charge():
+    # Amount in cents
+    #Can use a get on the dropdown to choose the product to sell to the individual
+    #We just need to get the one used in the form then change the logic below to reflect the other product
+    amount = 2500
+
+    customer = stripe.Customer.create(
+        email='customer@example.com',
+        card=request.form['stripeToken']
+    )
+
+    charge = stripe.Charge.create(
+        customer=customer.id,
+        amount=amount,
+        currency='usd',
+        description="Leave in Conditioner Purchase"
+        
+    )
+
+    return render_template('charge.html', amount=int(amount/100))
 
 if __name__ == '__main__':
-	#app.run(debug=False)
-	app.run(host='0.0.0.0', port=int(os.environ.get("PORT")))
+	app.run(debug=True)
+	#app.run(host='0.0.0.0', port=int(os.environ.get("PORT")))
 
