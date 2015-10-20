@@ -28,7 +28,7 @@ def index():
     return render_template('index.html', key=stripe_keys['publishable_key'])
 
 @app.route('/chargeSha', methods=['POST'])
-def charge():
+def chargeSha():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
@@ -50,7 +50,7 @@ def charge():
     return render_template('charge.html', amount=int(amount/100))
 
 @app.route('/chargeCon', methods=['POST'])
-def charge():
+def chargeCon():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
@@ -70,7 +70,7 @@ def charge():
     return render_template('charge.html', amount=int(amount/100))
 
 @app.route('/chargeLeave', methods=['POST'])
-def charge():
+def chargeLeave():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
