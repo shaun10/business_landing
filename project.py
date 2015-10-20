@@ -2,9 +2,10 @@ import os
 from flask import Flask, render_template, request
 import stripe
 
-#web: PUBLISHABLE_KEY=pk_test_6pRNASCoBOKtIshFeQd4XMUh SECRET_KEY=MadNessSecretKeyed10!!!233!21OK python project.py
-PUBLISHABLE_KEY="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-SECRET_KEY="sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+#PUBLISHABLE_KEY="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+#SECRET_KEY="sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+PUBLISHABLE_KEY="pk_live_T5KK4IFxY6z194Q2T54tHNgH"
+SECRET_KEY="sk_live_C3doGxhFMuOXo9mv6xjqsETK"
 
 # stripe_keys = {
 #     'secret_key': os.environ['SECRET_KEY'],
