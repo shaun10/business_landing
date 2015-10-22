@@ -45,13 +45,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#about">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#products">Products</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -67,19 +67,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="tagline">Samantha Beauty</h1>
-                </div>
+                    {# <h1 class="tagline">Samantha Beauty</h1>
+ #}                </div>
             </div>
         </div>
     </header>
 
     <!-- Page Content -->
-    <div class="container">
+    <div id="products" class="container">
 
         <hr>
 
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-12">
                 <h2>Our Products</h2>
                 <p>ls your hair damaged, brittle, dry, and lifeless? Would you like it to be soft, luxurious, and healthy? If you answered yes to either of these questions it may be time for you to try some amazing new hair products! With our specially formulated Shampoo, Conditioner, and Leave in Conditioner your hair could be runway ready before you know it! </p>
                 <p>All three of our products are free of Sulfates, Parabens, and Sodium Chloride. These chemicals are hidden in the ingredients of many well-knownbrands and they can cause damage to your scalp and your hair. Add that to the damage caused by swimming pools, thermal heat, and hair coloring and your hair may just be in crisis mode! The natural oils and vitamins in our hair care line go above and beyond to not only keep your hair clean and fresh, but to sooth and repair the damage done by other brands!!
@@ -88,20 +88,6 @@
                     <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
                 </p>
                 -->
-            </div>
-            <div class="col-sm-4">
-                <h2>Contact Us</h2>
-                <address>
-                    <strong>Samantha Beauty</strong>
-                    <br>10586 Garden Grove Blvd
-                    <br>Garden Grove, CA 92843
-                    <br>
-                </address>
-                <address>
-                    <abbr title="Phone">P:</abbr>(888)334-6467
-                    <br>
-                    <!--<abbr title="Email">E:</abbr> <a href="mailto:#">samanthadesign@yahoo.com</a> -->
-                </address>
             </div>
         </div>
         <!-- /.row -->
@@ -157,7 +143,7 @@
             <div class="col-sm-4">
                 <img class="img-thumbnail img-responsive img-center" src="static/leave_in.jpg" alt="">
                 <h2>Leave in Conditioner</h2>
-                <p>Leave in Conditioner is an important hair care product that many people neglect. Even the best shampoos and conditioners can't do it all, and that is where leave in products come in handy. Our leave in conditioner is packed full of hair healthy ingredients like Omega 3, Buriti nut oil,Jojoba oil Moroccan nut oil, Brazilian nut oil... These will give your hair lasting shine and protect it from things like sun damage,thermal heat,swimming pool,pollutants, and humidity! Don't wait until it's too late! Pick up our hair care trio and make your hair the healthiest on the block!!</p>
+                <p>Leave in Conditioner is an important hair care product that many people neglect. Even the best shampoos and conditioners can't do it all, and that is where leave in products come in handy. Our leave in conditioner is packed full of hair healthy ingredients like Omega 3, Buriti nut oil, Jojoba oil Moroccan nut oil, Brazilian nut oil... These will give your hair lasting shine and protect it from things like sun damage,thermal heat,swimming pool,pollutants, and humidity! Don't wait until it's too late! Pick up our hair care trio and make your hair the healthiest on the block!!</p>
                                 <p>
                   <form action="/chargeLeave" method="post" name='LeaveInConditioner'>
                 <article>
@@ -176,6 +162,22 @@
             </div>
         </div>
         <!-- /.row -->
+        <div id="contact">
+        <div class="col-sm-12">
+                <h2>Contact Us</h2>
+                <address>
+                    <strong>Samantha Beauty</strong>
+                    <br>10586 Garden Grove Blvd
+                    <br>Garden Grove, CA 92843
+                    <br>
+                </address>
+                <address>
+                    <abbr title="Phone">P:</abbr>(888)334-6467
+                    <br>
+                    <!--<abbr title="Email">E:</abbr> <a href="mailto:#">samanthadesign@yahoo.com</a> -->
+                </address>
+            </div>
+        </div>
 
         <hr>
 
