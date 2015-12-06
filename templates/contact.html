@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact me</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #f0f0f0;
+      color: #333333;
+    }
+    
+    </style>
+</head>
+<body>
+<div class="row">
+   <div class="col-md-12">
+   {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+    {% for message in messages %}
+      <div class="alert alert-success"><span class="glyphicon glyphicon-alert"></span><strong> {{message}}</strong>
+      </div>
+    
+    {% endfor %}
+  
+    {% endif %}
+  {% endwith %}
+    </div>
+    </div>
+<div class="container">
+<div class="row">
+  <form role="form" action="{{url_for('contactPage')}}" method="POST">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label for="c_name">Your Name</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="c_name" id="c_name" placeholder="Enter Name" required>
+          <span class="input-group-addon"></span></div>
+      </div>
+      <div class="form-group">
+        <label for="c_email">Your Email</label>
+        <div class="input-group">
+          <input type="email" class="form-control" id="c_email" name="c_email" placeholder="Enter Email" required  >
+          <span class="input-group-addon"></span></div>
+      </div>
+      <div class="form-group">
+        <label for="c_message">Message</label>
+        <div class="input-group">
+          <textarea name="c_message" id="c_message" class="form-control" rows="5" required></textarea>
+          <span class="input-group-addon"></span></div>
+      </div>
+      <div class="form-group">
+        <label for="c_validation">5 * 5 is how many?</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="c_validation" id="c_validation" required>
+          <span class="input-group-addon"></span></div>
+      </div>
+      <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
