@@ -22,7 +22,7 @@ stripe.api_key = stripe_keys['secret_key']
 app = Flask(__name__)
 app.secret_key = 'MadNessSecretKeyed10!!!233!21OK'
 
-itemsAvail = {'shampoo':2000, 'conditioner':2200,'leaveInConditioner':2500}
+itemsAvail = {'shampoo':2400, 'conditioner':2600,'leaveInConditioner':2900}
 
 @app.route('/')
 def index():
@@ -33,7 +33,7 @@ def chargeSha():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
-    amount = 2000
+    amount = 2400
 
     customer = stripe.Customer.create(
         email='customer@example.com',
@@ -55,7 +55,7 @@ def chargeCon():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
-    amount = 2200
+    amount = 2600
     customer = stripe.Customer.create(
         email='customer@example.com',
         card=request.form['stripeToken']
@@ -75,7 +75,7 @@ def chargeLeave():
     # Amount in cents
     #Can use a get on the dropdown to choose the product to sell to the individual
     #We just need to get the one used in the form then change the logic below to reflect the other product
-    amount = 2500
+    amount = 2900
 
     customer = stripe.Customer.create(
         email='customer@example.com',
