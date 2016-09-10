@@ -36,7 +36,7 @@ def chargeSha():
     amount = 2000
 
     customer = stripe.Customer.create(
-        email='customer@example.com',
+        email='order@samanthabeauty.com',
         card=request.form['stripeToken']
     )
 
@@ -57,7 +57,7 @@ def chargeCon():
     #We just need to get the one used in the form then change the logic below to reflect the other product
     amount = 2200
     customer = stripe.Customer.create(
-        email='customer@example.com',
+        email='order@samanthabeauty.com',
         card=request.form['stripeToken']
     )
 
@@ -78,7 +78,7 @@ def chargeLeave():
     amount = 2500
 
     customer = stripe.Customer.create(
-        email='customer@example.com',
+        email='order@samanthabeauty.com',
         card=request.form['stripeToken']
     )
 
